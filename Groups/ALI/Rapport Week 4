@@ -1,0 +1,19 @@
+Rapport Week 4
+- Ali Zemouri
+Projet Chess Game : Résolution du clouage
+Ce qu'on a fait
+J'ai finalisé la logique de détection de l'échec et du clouage (pin) en comprenant la distinction critique entre les cases attaquées (targetSquares) et les mouvements légaux (legalTargetSquares).
+
+J'ai corrigé king isInCheck pour qu'il interroge uniquement la portée géométrique des pièces adverses. Ainsi, même une pièce adverse clouée menace notre roi. Ensuite, j'ai utilisé legalMovesFrom: pour filtrer les mouvements de nos propres pièces en simulant le déplacement afin de vérifier la sécurité de notre roi. C'est cette distinction qui m'a permis de faire passer le test testMovesKingPinned avec succès.
+
+Conception Orientée Objet : Couplage et Encapsulation
+Ce qu'on a fait
+J'ai assimilé les concepts avancés de conception orientée objet vus en cours, sans entrer dans le code mais en comprenant la logique globale :
+
+Délégation vs Héritage : J'ai bien saisi comment la délégation offre plus de flexibilité et réduit le couplage structurel par rapport à l'héritage classique.
+
+Couplage et Loi de Déméter : J'ai compris l'importance de ne communiquer qu'avec ses objets directs ("amis immédiats") pour éviter les appels en chaîne. Cela permet de limiter les effets de bord lorsqu'un changement survient ailleurs dans l'application.
+
+Move Behavior close to Data : J'ai retenu le principe qui consiste à placer la logique au plus près des données qu'elle manipule. Cela renforce l'encapsulation et évite qu'une classe aille fouiller dans les variables internes d'une autre.
+
+Les limites (Heuristiques) : J'ai également compris que ces règles restent des principes directeurs. Une application trop stricte de la Loi de Déméter, par exemple sur des collections, peut paradoxalement rendre le code lourd en surchargeant l'API de la classe.
