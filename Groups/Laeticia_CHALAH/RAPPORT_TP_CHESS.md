@@ -172,6 +172,7 @@ L’appel commence par :
 
 ```smalltalk
 whiteBishop renderPieceOn: whiteSquare
+```
 
 ### Commit 2 — Simplification du rendu du fou avec table dispatch
 
